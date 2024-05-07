@@ -1,0 +1,44 @@
+Captura Sin Hilos
+
+¿Qué se puede notar con respecto al tiempo de ejecución? ¿Es predecible?
+Cada vez que se ejecuta por primera vez el codigo este tarda un aproximado de entre 10 y 12 segundos, siendo las demas veces entre 8 y 9 segundos, con un aproximado de 4 segundos la primera y la tercera tarea y de 1 segundo la tarea 2.
+
+Nombrar un proceso o función de la vida real que pueden ser considerados procesos de “máxima velocidad posible” que dependen casi exclusivamente de la velocidad de la máquina que los ejecuta (ej.Ordenar una lista)
+Proceso de comprimir o descomprimir archivos.
+
+Nombrar un proceso o función de la vida real que pueden ser considerados procesos de “velocidad de respuesta no dependiente de la velocidad de procesamiento” o que sea de naturaleza impredecible o externa (ej. Leer un archivo externo)
+Reconocimiento de huellas dactilares, donde puede ser afectada la velocidad por suciedad en los dedos, lector, problemas con el internet, etc.
+
+Captura Con Hilos
+
+¿Qué se puede notar con respecto al tiempo de ejecución? ¿Se mejoró el tiempo de respuesta con respecto al mismo programa sin hilos?
+Si, mejoro con notable apreciacion en el tiempo.. aproximadamente tarda la mitad del tiempo.
+
+¿Completan las funciones su ejecución en el orden establecido?
+No, en mi caso se completaba el segundo primero, luego el tercero y por ultimo el primero.
+
+Nombrar un escenario real donde el multi-hilado puede mejorar considerablemente el tiempo de respuesta de un sistema (ej. Carga de una página WEB en un navegador)
+Reproduccion de videos con sonido.
+
+Captura Sumador Restador Con Race
+
+¿Qué se puede notar con respecto al tiempo de ejecución?
+Sigue siendo una ejecucion inmediata.
+
+¿Qué sucede con el valor final del acumulador?
+En el caso de la maquina virtual me dio siempre el mismo valor (0), dejando la foto captura en la carpeta de capturas, pero en el caso de en windows me daba numeros entre -5000 y 5000.
+
+¿Por qué sucede esto?
+TIP: cambios de contexto en medio de acceso a zona crítica y actualización de valor de variable
+Sucede ya que, depende de como se planifiquen los hilos al ejecutar el codigo, completandose las operaciones de suma o resta antes que la otra.
+
+¿Cómo se puede corregir esta condición de carrera sin dejar de utilizar hilos?
+Leyendo en la parte siguiente del archivo pdf del practico 3, se puede corregir con un bloqueador de hilos utilizando candado o proteccion de hilos.
+
+Captura Sumador Restador Sin Race
+
+¿Qué sucede con el valor final del acumulador?
+En este caso si da igual a 0 en todos los casos que se ejecuta el codigo.
+
+¿Qué se puede notar con respecto al tiempo de ejecución?
+Practicamente es igual a los demas, algo inmediato.
